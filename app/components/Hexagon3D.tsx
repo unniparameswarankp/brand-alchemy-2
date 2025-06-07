@@ -11,7 +11,6 @@ export default function Hexagon3D() {
   const dragRef = useRef<HTMLDivElement>(null); // invisible drag target
 
   useEffect(() => {
-    let proxy = { rotationY: 0 };
 
     Draggable.create(dragRef.current!, {
       type: 'x',

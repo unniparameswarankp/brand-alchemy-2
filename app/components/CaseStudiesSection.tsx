@@ -140,7 +140,6 @@ type ServiceCardProps = {
 };
 
 function ServiceCard({ study }: ServiceCardProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="ba-service-card text-white w-[360px]">
