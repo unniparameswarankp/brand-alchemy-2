@@ -18,19 +18,18 @@ export default function SmoothScrollProvider({
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      // ✅ removed 'smooth'
-      // ✅ added smoothWheel and smoothTouch as needed
-      smoothWheel: true,
-      smoothTouch: false,
+      gestureOrientation: 'vertical',
+      lerp: 0.1, // smoothness
     });
 
     lenisRef.current = lenis;
 
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
-        return value !== undefined
-          ? lenis.scrollTo(value)
-          : lenis.scroll.instance.scroll.y;
+        if (value !== undefined) {
+          lenis.scrollTo(value);
+        }
+        return lenis.scroll.instance.scroll.y;
       },
       getBoundingClientRect() {
         return {
