@@ -20,13 +20,13 @@ const caseStudies = [
     id: 2,
     title: "Software Development",
     desc: "Providing tailored business solutions through innovative software development that streamlines operations, enhances productivity, and meets your unique enterprise needs.",
-    image: "/images/webdevelopment.jpg",
+    image: "/images/softwaredevelopment.jpg",
   },
   {
     id: 3,
     title: "Print",
     desc: "Delivering creative printed marketing materials including business cards, flyers, and posters that capture your brand’s essence and leave a lasting impression.",
-    image: "/images/webdevelopment.jpg",
+    image: "/images/printing.jpg",
   },
   {
     id: 4,
@@ -38,13 +38,13 @@ const caseStudies = [
     id: 5,
     title: "Software Development",
     desc: "Providing tailored business solutions through innovative software development that streamlines operations, enhances productivity, and meets your unique enterprise needs.",
-    image: "/images/webdevelopment.jpg",
+    image: "/images/softwaredevelopment.jpg",
   },
   {
     id: 6,
     title: "Print",
     desc: "Delivering creative printed marketing materials including business cards, flyers, and posters that capture your brand’s essence and leave a lasting impression.",
-    image: "/images/webdevelopment.jpg",
+    image: "/images/printing.jpg",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function CaseStudiesScrollSection() {
         },
       });
 
-      tl.to(title, { opacity: 0, y: -100, duration: 0.2, ease: "none" });
+      tl.to(title, { opacity: 0, letterSpacing: "0.5em", duration: 0.2, ease: "none" });
       tl.to(horizontal, { x: `-${scrollLength}px`, ease: "none" }, ">-0.1");
     }, section);
 
@@ -103,8 +103,9 @@ export default function CaseStudiesScrollSection() {
 
   return (
     <section
+    id="section2"
       ref={sectionRef}
-      className="relative w-full h-screen bg-light text-black overflow-hidden ba-service-scroll"
+      className="relative w-full h-screen text-black overflow-hidden ba-service-scroll"
     >
       {/* Title */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]">
@@ -119,13 +120,13 @@ export default function CaseStudiesScrollSection() {
       {/* Horizontally Scrolling Cards */}
       <div
         ref={horizontalRef}
-        className="flex h-full items-center px-20 absolute gap-20 top-0 left-0"
-        style={{ width: `${caseStudies.length * 420 + 400}px` }}
+        className="flex h-full items-center px-20 absolute gap-5vw top-0 left-0"
+        style={{ width: `${caseStudies.length * 35}vw` }}
       >
         {caseStudies.map((study) => (
           <ServiceCard key={study.id} study={study} />
         ))}
-        <div className="spacer-400" />
+        <div className="ba-service-card text-white"></div>
       </div>
     </section>
   );
@@ -142,7 +143,7 @@ type ServiceCardProps = {
 function ServiceCard({ study }: ServiceCardProps) {
 
   return (
-    <div className="ba-service-card text-white w-[360px]">
+    <div className="ba-service-card text-white">
       <div className="face face-front p-4 bg-primaryrounded-2xl shadow-xl h-full flex flex-col justify-between">
         <figure className="mb-4">
           <img src={study.image} alt={study.title} className="rounded-xl" />

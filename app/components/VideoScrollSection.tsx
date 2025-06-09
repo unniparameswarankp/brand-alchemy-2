@@ -93,7 +93,7 @@ export default function VideoScrollSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative h-[200vh] w-full overflow-hidden bg-light">
+    <div id='#section0' ref={containerRef} className="relative h-[200vh] w-full overflow-hidden">
       {/* Video Background */}
       <div className="video-wrapper absolute top-0 left-0 w-full h-screen" ref={videoRef}>
         <video

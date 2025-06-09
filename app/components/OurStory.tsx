@@ -52,7 +52,7 @@ export default function OurStory() {
 
 
   return (
-    <section className="bg-black flex align-center text-white h-screen py-20 ba-our-story" ref={logoRef}>
+    <section id="section4" className="flex align-center text-white h-screen py-20 ba-our-story" ref={logoRef}>
 
 
       <div className="ba-container grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10">
@@ -65,12 +65,12 @@ export default function OurStory() {
               transition={{ duration: 0.4 }}
               className="text-ba"
             >
-          <h2 className="text-5xl md:text-6xl font-light mb-6">Our Story</h2>
-          <p className="text-lg leading-relaxed mb-10 font-light">
+          <h2 className="text-5xl md:text-6xl font-liggt color-primary mb-6">Our Story</h2>
+          <p className="text-lg leading-relaxed text-black mb-10 font-light">
             In a world brimming with possibilities, we sprouted, seizing our destiny to create an extraordinary
             narrative – a tale that encapsulates laughter, tears, challenges, and triumphs.
           </p>
-          <Link href="#" className="inline-flex items-center gap-3 arrow-btn-border-white">
+          <Link href="#" className="inline-flex items-center gap-3 arrow-btn-border-black">
                 Read More <img src="/arrow_right_white.svg" alt="arrow" />
               </Link>
         </motion.div>

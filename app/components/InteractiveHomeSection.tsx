@@ -143,8 +143,9 @@ export default function InteractiveHomeSection() {
 
   return (
     <section
+    id="section1"
       ref={containerRef}
-      className="relative w-full h-screen bg-light text-white flex items-center justify-center px-8 overflow-hidden ba-interactive-home mag-tp--100vh"
+      className="relative w-full h-screen text-white flex items-center justify-center px-8 overflow-hidden ba-interactive-home mag-tp--100vh"
     >
       {/* Paragraph section */}
       <p
